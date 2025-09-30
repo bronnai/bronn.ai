@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>home | bronn</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<script>
+		!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init Te Ds js Re Os As capture Ke calculateEventProperties zs register register_once register_for_session unregister unregister_for_session Hs getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty qs Ns createPersonProfile Bs Cs Ws opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Ls debug L Us getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+		posthog.init('phc_9fI27X7qh2Nmv1v6HkZ679YQsOoKJRDBuWic0rKHS8A', {
+			api_host: 'https://eu.i.posthog.com',
+			defaults: '2025-05-24',
+			person_profiles: 'always',
+		})
+	</script>
+	<style>
+		:root {
+			--bg: #f7f8fa;
+			--accent: #FF6B6B;
+			--accent-dark: #FF5252;
+			--max-modal-gap: 24px;
+		}
+
+		* { box-sizing: border-box; }
+
+		body {
+			font-family: 'Montserrat', sans-serif;
+			background-color: var(--bg);
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			padding-top: 0vh;
+			overflow-y: auto;
+		}
+
+		.logo-wrapper { 
+			text-align: center; 
+			margin-bottom: 0.25rem;
+		}
+		
+		.logo { 
+			max-width: 600px; 
+			width: 70%; 
+			height: auto; 
+		}
+		
+		.rocket-wrapper { 
+			text-align: center; 
+			margin-bottom: -20px; 
+			margin-top: -30px; 
+		}
+		
+		.rocket-image { 
+			max-width: 500px; 
+			width: 100%; 
+			height: auto; 
+			animation: gentle-shake 1s infinite; 
+		}
+		
+		@keyframes gentle-shake { 
+			0%{transform:translate(0,2px)rotate(0deg);}
+			10%{transform:translate(1.18px,1.62px)rotate(0.48deg);}
+			20%{transform:translate(1.9px,0.62px)rotate(0.29deg);}
+			30%{transform:translate(1.9px,-0.62px)rotate(-0.29deg);}
+			40%{transform:translate(1.18px,-1.62px)rotate(-0.48deg);}
+			50%{transform:translate(0,-2px)rotate(0);}
+			60%{transform:translate(-1.18px,-1.62px)rotate(0.48deg);}
+			70%{transform:translate(-1.9px,-0.62px)rotate(0.29deg);}
+			80%{transform:translate(-1.9px,0.62px)rotate(-0.29deg);}
+			90%{transform:translate(-1.18px,1.62px)rotate(-0.48deg);}
+			100%{transform:translate(0,2px)rotate(0);}
+		}
+
+		.contact-container { 
+			width: 100%; 
+			max-width: 420px; 
+			text-align: center; 
+			margin-top: 20px; 
+			padding: 0 12px; 
+		}
+		
+		.contact-text { 
+			font-size: 1rem; 
+			color: #333; 
+			margin-bottom: 0.5rem; 
+		}
+		
+		.contact-link { 
+			text-decoration: underline; 
+			text-decoration-color: #111; 
+			text-decoration-thickness: 3px; 
+			color: inherit; 
+		}
+		
+		.contact-link:hover { 
+			text-decoration-color: #d1d3d4;
+		}
+
+		.btn-demo {
+			display: inline-flex;
+			align-items: center;
+			gap: 12px;
+			padding: 18px 32px;
+			background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+			color: white;
+			border: none;
+			border-radius: 12px;
+			cursor: pointer;
+			font-size: 18px;
+			font-weight: 700;
+			text-decoration: none;
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			position: relative;
+			overflow: hidden;
+			letter-spacing: 0.5px;
+		}
+		
+		.btn-demo::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+			transition: left 0.6s;
+		}
+		
+		.btn-demo:hover {
+			background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
+		}
+		
+		.btn-demo:hover::before {
+			left: 100%;
+		}
+
+		.play-icon {
+			width: 0;
+			height: 0;
+			border-left: 18px solid white;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			margin-left: 3px;
+			filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+		}
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 2000;
+			left: 0; top: 0;
+			width: 100%; height: 100%;
+			background: rgba(0,0,0,0.85);
+			justify-content: center;
+			align-items: center;
+			padding: var(--max-modal-gap);
+		}
+
+		.modal-content {
+			position: relative;
+			width: calc(100% - 48px);
+			max-width: 1200px;
+			max-height: calc(100vh - 48px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.video-container {
+			width: 100%;
+			max-height: 100%;
+			position: relative;
+		}
+
+		.video-container video {
+			width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+			border-radius: 8px;
+			display: block;
+			background: #000;
+		}
+
+		@media(max-width:480px) {
+			.modal-content { width: calc(100% - 12px); max-height: calc(100vh - 12px); }
+		}
+	</style>
+</head>
+<body>
+	<div class="logo-wrapper">
+		<img src="bronn-coming-soon.png" alt="Logo" class="logo">
+	</div>
+	<div class="rocket-wrapper">
+		<img src="rocket.png" alt="Rocket" class="rocket-image">
+	</div>
+
+	<button class="btn-demo" id="openDemo">
+		<div class="play-icon"></div>
+		<span>bronn in action</span>
+	</button>
+
+	<div class="contact-container">
+		<p class="contact-text">
+			In the meantime, <a href="mailto:contact@bronn.ai" class="contact-link">contact us</a> or 
+			<a href="https://calendly.com/dan-delchev-bronn/30min" target="_blank" class="contact-link">book a demo</a> 
+			to unlock AI-powered data quality
+		</p>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal" id="demoModal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+		<div class="modal-content" role="document">
+			<div class="video-container">
+				<video id="demoVideo" controls playsinline webkit-playsinline preload="metadata">
+					<source src="bronn-demo.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		(function() {
+			const openBtn = document.getElementById('openDemo');
+			const modal = document.getElementById('demoModal');
+			const video = document.getElementById('demoVideo');
+
+			function openModal() {
+				modal.style.display = 'flex';
+				modal.setAttribute('aria-hidden', 'false');
+				document.documentElement.style.overflow = 'hidden';
+				document.body.style.overflow = 'hidden';
+			}
+
+			function closeModal() {
+				modal.style.display = 'none';
+				modal.setAttribute('aria-hidden', 'true');
+				document.documentElement.style.overflow = '';
+				document.body.style.overflow = '';
+				video.pause();
+				video.currentTime = 0;
+			}
+
+			openBtn.addEventListener('click', openModal);
+
+			modal.addEventListener('click', e => {
+				if(e.target === modal) closeModal();
+			});
+
+			const modalContent = modal.querySelector('.modal-content');
+			modalContent.addEventListener('click', e => e.stopPropagation());
+
+			document.addEventListener('keydown', e => {
+				if(e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+			});
+		})();
+	</script>
+</body>
+</html>
+
+
