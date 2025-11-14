@@ -22,6 +22,20 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 	
+	if (window.location.hash) {
+	    const hashTarget = document.querySelector(window.location.hash);
+	    if (hashTarget) {
+	        setTimeout(() => {
+	            const navHeight = getNavHeight();
+	            const targetOffset = hashTarget.getBoundingClientRect().top + window.pageYOffset - navHeight;
+	            window.scrollTo({
+	                top: targetOffset,
+	                behavior: 'smooth'
+	            });
+	        }, 100);
+	    }
+	}
+
 	const mobileMenu = document.querySelector('.mobile-menu');
 	const navUl = document.querySelector('nav ul');
 	if (mobileMenu && navUl) {
