@@ -1,11 +1,11 @@
+function getNavHeight() {
+	const nav = document.querySelector('nav');
+	return nav ? nav.offsetHeight : 0;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('current-year').textContent = new Date().getFullYear();
-	
-	function getNavHeight() {
-		const nav = document.querySelector('nav');
-		return nav ? nav.offsetHeight : 0;
-	}
-	
+		
 	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 		anchor.addEventListener('click', function (e) {
 			e.preventDefault();
