@@ -1,0 +1,48 @@
+# Allow all standard bots
+User-agent: *
+Allow: /
+
+# Search Engines
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: YandexBot
+Allow: /
+User-agent: Yahoo! Slurp
+Allow: /
+User-agent: AliyunBot
+Allow: /
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Meta
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# DeepSeek
+User-agent: DeepseekBot
+Allow: /
+
+# Sitemap
+Sitemap: https://bronn.ai/sitemap.xml
