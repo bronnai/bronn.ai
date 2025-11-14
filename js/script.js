@@ -94,3 +94,19 @@ document.addEventListener('DOMContentLoaded', function() {
 		}, 150);
 	});
 });
+
+window.addEventListener('hashchange', function() {
+    if (window.location.hash) {
+        const hashTarget = document.querySelector(window.location.hash);
+        if (hashTarget) {
+            setTimeout(() => {
+                const navHeight = getNavHeight();
+                const targetOffset = hashTarget.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                window.scrollTo({
+                    top: targetOffset,
+                    behavior: 'smooth'
+                });
+            }, 100);
+        }
+    }
+});
