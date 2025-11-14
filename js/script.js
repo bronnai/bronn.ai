@@ -1,0 +1,82 @@
+document.addEventListener('DOMContentLoaded', function() {
+	document.getElementById('current-year').textContent = new Date().getFullYear();
+	
+	function getNavHeight() {
+		const nav = document.querySelector('nav');
+		return nav ? nav.offsetHeight : 0;
+	}
+	
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+			const targetId = this.getAttribute('href');
+			const target = document.querySelector(targetId);
+			if (target) {
+				const navHeight = getNavHeight();
+				const targetOffset = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+				window.scrollTo({
+					top: targetOffset,
+					behavior: 'smooth'
+				});
+			}
+		});
+	});
+	
+	const mobileMenu = document.querySelector('.mobile-menu');
+	const navUl = document.querySelector('nav ul');
+	if (mobileMenu && navUl) {
+		mobileMenu.addEventListener('click', function() {
+			const isOpen = navUl.style.display === 'flex';
+			if (isOpen) {
+				navUl.style.display = 'none';
+			} else {
+				Object.assign(navUl.style, {
+					display: 'flex',
+					flexDirection: 'column',
+					position: 'absolute',
+					top: '100%',
+					left: '0',
+					right: '0',
+					background: '#fff',
+					padding: '1rem 5%',
+					boxShadow: '0 5px 20px rgba(0,0,0,0.1)',
+					gap: '1rem',
+					zIndex: '999'
+				});
+			}
+		});
+		
+		navUl.querySelectorAll('a').forEach(link => {
+			link.addEventListener('click', () => {
+				if (window.innerWidth <= 768) {
+					navUl.style.display = 'none';
+				}
+			});
+		});
+	}
+	
+	const pricingSwitch = document.getElementById('pricing-switch');
+	if (pricingSwitch) {
+		pricingSwitch.addEventListener('change', function() {
+			const monthlyElements = document.querySelectorAll('.price-monthly');
+			const yearlyElements = document.querySelectorAll('.price-yearly');
+			if (this.checked) {
+				monthlyElements.forEach(el => el.style.display = 'none');
+				yearlyElements.forEach(el => el.style.display = 'block');
+			} else {
+				monthlyElements.forEach(el => el.style.display = 'block');
+				yearlyElements.forEach(el => el.style.display = 'none');
+			}
+		});
+	}
+	
+	let resizeTimeout;
+	window.addEventListener('resize', () => {
+		clearTimeout(resizeTimeout);
+		resizeTimeout = setTimeout(() => {
+			if (window.innerWidth > 768 && navUl) {
+				navUl.style.cssText = '';
+			}
+		}, 150);
+	});
+});
