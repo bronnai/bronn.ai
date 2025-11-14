@@ -5,7 +5,7 @@ function getNavHeight() {
 
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('current-year').textContent = new Date().getFullYear();
-		
+
 	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 		anchor.addEventListener('click', function (e) {
 			e.preventDefault();
@@ -21,19 +21,19 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		});
 	});
-	
+
 	if (window.location.hash) {
-	    const hashTarget = document.querySelector(window.location.hash);
-	    if (hashTarget) {
-	        setTimeout(() => {
-	            const navHeight = getNavHeight();
-	            const targetOffset = hashTarget.getBoundingClientRect().top + window.pageYOffset - navHeight;
-	            window.scrollTo({
-	                top: targetOffset,
-	                behavior: 'smooth'
-	            });
-	        }, 100);
-	    }
+		const hashTarget = document.querySelector(window.location.hash);
+		if (hashTarget) {
+			setTimeout(() => {
+				const navHeight = getNavHeight();
+				const targetOffset = hashTarget.getBoundingClientRect().top + window.pageYOffset - navHeight;
+				window.scrollTo({
+					top: targetOffset,
+					behavior: 'smooth'
+				});
+			}, 100);
+		}
 	}
 
 	const mobileMenu = document.querySelector('.mobile-menu');
@@ -96,17 +96,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 window.addEventListener('hashchange', function() {
-    if (window.location.hash) {
-        const hashTarget = document.querySelector(window.location.hash);
-        if (hashTarget) {
-            setTimeout(() => {
-                const navHeight = getNavHeight();
-                const targetOffset = hashTarget.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                window.scrollTo({
-                    top: targetOffset,
-                    behavior: 'smooth'
-                });
-            }, 100);
-        }
-    }
+	if (window.location.hash) {
+		const hashTarget = document.querySelector(window.location.hash);
+		if (hashTarget) {
+			setTimeout(() => {
+				const navHeight = getNavHeight();
+				const targetOffset = hashTarget.getBoundingClientRect().top + window.pageYOffset - navHeight;
+				window.scrollTo({
+					top: targetOffset,
+					behavior: 'smooth'
+				});
+			}, 100);
+		}
+	}
 });
