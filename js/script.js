@@ -110,3 +110,35 @@ window.addEventListener('hashchange', function() {
 		}
 	}
 });
+
+document.querySelectorAll('video').forEach(video => {
+  let savedScrollY = 0;
+  let orientation = screen.orientation?.angle || 0;
+  
+  const saveScroll = () => { 
+	savedScrollY = window.scrollY;
+	orientation = screen.orientation?.angle || 0;
+  };
+  
+  video.addEventListener('webkitbeginfullscreen', saveScroll);
+  video.addEventListener('fullscreenchange', () => {
+	if (document.fullscreenElement) {
+	  saveScroll();
+	}
+  });
+  
+  const restoreScroll = () => {
+	if (!document.fullscreenElement && !document.pictureInPictureElement) {
+	  const currentOrientation = screen.orientation?.angle || 0;
+	  if (orientation === currentOrientation) {
+		requestAnimationFrame(() => {
+		  window.scrollTo({ top: savedScrollY, left: 0, behavior: 'instant' });
+		});
+	  }
+	}
+  };
+  
+  video.addEventListener('webkitendfullscreen', restoreScroll);
+  video.addEventListener('fullscreenchange', restoreScroll);
+  video.addEventListener('leavepictureinpicture', restoreScroll);
+});
