@@ -281,6 +281,8 @@ nav ul li a:hover {
 	overflow: hidden;
 	box-shadow: 0 10px 40px rgba(0,0,0,0.1);
 	background: #000;
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 }
 
 .video-container video {
