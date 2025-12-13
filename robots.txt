@@ -1,48 +1,70 @@
 # Allow all standard bots
 User-agent: *
 Allow: /
+Disallow: /*.pdf
 
 # Search Engines
 User-agent: Googlebot
 Allow: /
+Disallow: /*.pdf
+
 User-agent: Bingbot
 Allow: /
+Disallow: /*.pdf
+
 User-agent: YandexBot
 Allow: /
+Disallow: /*.pdf
+
 User-agent: Yahoo! Slurp
 Allow: /
+Disallow: /*.pdf
+
 User-agent: AliyunBot
 Allow: /
+Disallow: /*.pdf
 
 # OpenAI
 User-agent: GPTBot
 Allow: /
+Disallow: /*.pdf
+
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /*.pdf
 
 # Google AI
 User-agent: Google-Extended
 Allow: /
+Disallow: /*.pdf
 
 # Perplexity AI
 User-agent: PerplexityBot
 Allow: /
+Disallow: /*.pdf
 
 # Anthropic
 User-agent: ClaudeBot
 Allow: /
+Disallow: /*.pdf
+
 User-agent: Claude-Web
 Allow: /
+Disallow: /*.pdf
+
 User-agent: anthropic-ai
 Allow: /
+Disallow: /*.pdf
 
 # Meta
 User-agent: Meta-ExternalAgent
 Allow: /
+Disallow: /*.pdf
 
 # DeepSeek
 User-agent: DeepseekBot
 Allow: /
+Disallow: /*.pdf
 
 # Sitemap
 Sitemap: https://bronn.ai/sitemap.xml
