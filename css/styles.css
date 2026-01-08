@@ -96,6 +96,7 @@ nav ul li a:hover {
 	cursor: pointer;
 	width: 2rem;
 	text-align: center;
+	flex-shrink: 0;
 }
 
 .mobile-nav-controls {
@@ -552,6 +553,8 @@ footer .container {
 @media (max-width: 768px) {
 	.mobile-nav-controls {
 		display: flex;
+		flex-direction: row;
+		align-items: center;
 	}
 
 	.desktop-only {
@@ -642,5 +645,11 @@ footer .container {
 	.video-promo p {
 		font-size: 1.1rem;
 		text-align: left;
+	}
+}
+
+@media (min-width: 769px) {
+	.mobile-nav-controls {
+		display: none !important;
 	}
 }
