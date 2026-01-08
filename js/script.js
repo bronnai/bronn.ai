@@ -3,7 +3,7 @@ function getNavHeight() {
 	return nav ? nav.offsetHeight : 0;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 	document.getElementById('current-year').textContent = new Date().getFullYear();
 
 	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -38,43 +38,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	const mobileMenu = document.querySelector('.mobile-menu');
 	const navUl = document.querySelector('nav ul');
+	const menuOverlay = document.querySelector('.menu-overlay');
+
+	function closeMenu() {
+		// Enable animation just for this action
+		document.body.classList.add('nav-animating');
+
+		// Change state
+		navUl.classList.remove('open');
+		if (menuOverlay) menuOverlay.classList.remove('active');
+		mobileMenu.textContent = '☰';
+
+		// Cleanup animation class after transition (300ms)
+		setTimeout(() => {
+			document.body.classList.remove('nav-animating');
+		}, 300);
+	}
+
+	function openMenu() {
+		document.body.classList.add('nav-animating');
+		navUl.classList.add('open');
+		if (menuOverlay) menuOverlay.classList.add('active');
+		mobileMenu.textContent = '✕';
+
+		setTimeout(() => {
+			document.body.classList.remove('nav-animating');
+		}, 300);
+	}
+
 	if (mobileMenu && navUl) {
-		mobileMenu.addEventListener('click', function() {
-			const isOpen = navUl.style.display === 'flex';
-			if (isOpen) {
-				navUl.style.display = 'none';
-				mobileMenu.textContent = '☰';
-			} else {
-				Object.assign(navUl.style, {
-					display: 'flex',
-					flexDirection: 'column',
-					position: 'absolute',
-					top: '100%',
-					left: '0',
-					right: '0',
-					background: '#fff',
-					padding: '1rem 5%',
-					boxShadow: '0 5px 20px rgba(0,0,0,0.1)',
-					gap: '1rem',
-					zIndex: '999'
-				});
-				mobileMenu.textContent = '✕';
-			}
+		// Toggle Click
+		mobileMenu.addEventListener('click', function () {
+			const isOpen = navUl.classList.contains('open');
+			isOpen ? closeMenu() : openMenu();
 		});
 
+		// Overlay Click
+		if (menuOverlay) {
+			menuOverlay.addEventListener('click', closeMenu);
+		}
+
+		// Close on Link Click
 		navUl.querySelectorAll('a').forEach(link => {
 			link.addEventListener('click', () => {
-				if (window.innerWidth <= 768) {
-					navUl.style.display = 'none';
-					mobileMenu.textContent = '☰';
-				}
+				if (window.innerWidth <= 768) closeMenu();
 			});
 		});
 	}
 
 	const pricingSwitch = document.getElementById('pricing-switch');
 	if (pricingSwitch) {
-		pricingSwitch.addEventListener('change', function() {
+		pricingSwitch.addEventListener('change', function () {
 			const monthlyElements = document.querySelectorAll('.price-monthly');
 			const yearlyElements = document.querySelectorAll('.price-yearly');
 			if (this.checked) {
@@ -87,19 +101,22 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 
+	// Resize Handler (Prevents ghosting)
 	let resizeTimeout;
 	window.addEventListener('resize', () => {
 		clearTimeout(resizeTimeout);
 		resizeTimeout = setTimeout(() => {
-			if (window.innerWidth > 768) {
-				if (navUl) navUl.style.cssText = '';
+			if (window.innerWidth > 768 && navUl) {
+				// Instantly remove classes without animation
+				navUl.classList.remove('open');
+				if (menuOverlay) menuOverlay.classList.remove('active');
 				if (mobileMenu) mobileMenu.textContent = '☰';
 			}
 		}, 150);
 	});
 });
 
-window.addEventListener('hashchange', function() {
+window.addEventListener('hashchange', function () {
 	if (window.location.hash) {
 		const hashTarget = document.querySelector(window.location.hash);
 		if (hashTarget) {

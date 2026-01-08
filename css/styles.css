@@ -550,6 +550,28 @@ footer .container {
 	}
 }
 
+/* Dark Overlay - Global to prevent layout shift */
+.menu-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 998;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.nav-animating .menu-overlay {
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay.active {
+	opacity: 1;
+	visibility: visible;
+}
+
 @media (max-width: 768px) {
 	.mobile-nav-controls {
 		display: flex;
@@ -565,8 +587,50 @@ footer .container {
 		display: inline-block !important;
 	}
 
+	/* Mobile Menu Slide-in */
 	nav ul {
-		display: none;
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 280px;
+		max-width: 80vw;
+		height: 100vh;
+		background: #fff;
+		padding: 80px 30px 40px;
+		gap: 0.5rem;
+		z-index: 999;
+		transform: translateX(100%);
+		align-items: flex-start;
+		/* Note: Transition is purposefully REMOVED from here */
+	}
+
+	/* Only animate when this class is present */
+	.nav-animating nav ul {
+		transition: transform 0.3s ease;
+	}
+
+	nav ul.open {
+		transform: translateX(0);
+	}
+
+	nav ul li a {
+		padding: 12px 0;
+		display: block;
+		width: 100%;
+	}
+
+
+
+
+
+	.mobile-menu {
+		display: block;
+		/* Ensure hamburger is visible */
+		z-index: 1000;
+		/* Above overlay */
+		cursor: pointer;
 	}
 
 	.mobile-menu {
