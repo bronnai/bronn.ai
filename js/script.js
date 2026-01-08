@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			const isOpen = navUl.style.display === 'flex';
 			if (isOpen) {
 				navUl.style.display = 'none';
+				mobileMenu.textContent = '☰';
 			} else {
 				Object.assign(navUl.style, {
 					display: 'flex',
@@ -57,18 +58,20 @@ document.addEventListener('DOMContentLoaded', function() {
 					gap: '1rem',
 					zIndex: '999'
 				});
+				mobileMenu.textContent = '✕';
 			}
 		});
-		
+
 		navUl.querySelectorAll('a').forEach(link => {
 			link.addEventListener('click', () => {
 				if (window.innerWidth <= 768) {
 					navUl.style.display = 'none';
+					mobileMenu.textContent = '☰';
 				}
 			});
 		});
 	}
-	
+
 	const pricingSwitch = document.getElementById('pricing-switch');
 	if (pricingSwitch) {
 		pricingSwitch.addEventListener('change', function() {
@@ -83,13 +86,14 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		});
 	}
-	
+
 	let resizeTimeout;
 	window.addEventListener('resize', () => {
 		clearTimeout(resizeTimeout);
 		resizeTimeout = setTimeout(() => {
-			if (window.innerWidth > 768 && navUl) {
-				navUl.style.cssText = '';
+			if (window.innerWidth > 768) {
+				if (navUl) navUl.style.cssText = '';
+				if (mobileMenu) mobileMenu.textContent = '☰';
 			}
 		}, 150);
 	});
