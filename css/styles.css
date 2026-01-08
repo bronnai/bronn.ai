@@ -607,7 +607,7 @@ footer .container {
 		max-width: 80vw;
 		height: 100vh;
 		background: #fff;
-		padding: 80px 30px 40px;
+		padding: 80px 30px 80px;
 		gap: 0.5rem;
 		z-index: 999;
 		transform: translateX(100%);
