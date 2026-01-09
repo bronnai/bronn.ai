@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		navUl.classList.remove('open');
 		if (menuOverlay) menuOverlay.classList.remove('active');
 		mobileMenu.textContent = '☰';
-		document.body.classList.remove('menu-open');
 
 		// Cleanup animation class after transition (300ms)
 		setTimeout(() => {
@@ -61,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		navUl.classList.add('open');
 		if (menuOverlay) menuOverlay.classList.add('active');
 		mobileMenu.textContent = '✕';
-		document.body.classList.add('menu-open');
 
 		setTimeout(() => {
 			document.body.classList.remove('nav-animating');
@@ -113,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				navUl.classList.remove('open');
 				if (menuOverlay) menuOverlay.classList.remove('active');
 				if (mobileMenu) mobileMenu.textContent = '☰';
-				document.body.classList.remove('menu-open');
 			}
 		}, 150);
 	});
