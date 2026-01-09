@@ -557,7 +557,7 @@ footer .container {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 100dvh;
+	height: 100lvh;
 	background: rgba(0, 0, 0, 0.5);
 	z-index: 998;
 	opacity: 0;
@@ -597,7 +597,7 @@ footer .container {
 		right: 0;
 		width: 280px;
 		max-width: 80vw;
-		height: 100dvh;
+		height: 100lvh;
 		background: #fff;
 		padding: 80px 30px 40px;
 		gap: 0.5rem;
