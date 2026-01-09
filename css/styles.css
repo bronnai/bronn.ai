@@ -562,7 +562,6 @@ footer .container {
 	z-index: 998;
 	opacity: 0;
 	visibility: hidden;
-	pointer-events: none;
 }
 
 .nav-animating .menu-overlay {
@@ -572,7 +571,6 @@ footer .container {
 .menu-overlay.active {
 	opacity: 1;
 	visibility: visible;
-	pointer-events: auto;
 }
 
 @media (max-width: 768px) {
@@ -606,7 +604,8 @@ footer .container {
 		z-index: 999;
 		transform: translateX(100%);
 		align-items: flex-start;
-		overflow-y: auto;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
 	}
 
 	/* Only animate when this class is present */
