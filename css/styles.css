@@ -605,6 +605,9 @@ footer .container {
 		transform: translateX(100%);
 		align-items: flex-start;
 		overflow-y: auto;
+		overscroll-behavior: contain;
+		touch-action: pan-y;
+		-webkit-overflow-scrolling: touch;
 		/* Note: Transition is purposefully REMOVED from here */
 	}
 
