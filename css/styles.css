@@ -604,8 +604,7 @@ footer .container {
 		z-index: 999;
 		transform: translateX(100%);
 		align-items: flex-start;
-		overflow-y: scroll;
-		-webkit-overflow-scrolling: touch;
+		overflow-y: auto;
 	}
 
 	/* Only animate when this class is present */
