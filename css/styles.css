@@ -55,7 +55,7 @@ nav .logo img {
 nav ul {
 	display: flex;
 	list-style: none;
-	gap: 2.5rem;
+	gap: 2rem;
 	align-items: center;
 }
 
@@ -557,7 +557,7 @@ footer .container {
 	right: 0;
 	bottom: 0;
 	height: 100lvh;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.7);
 	z-index: 998;
 	opacity: 0;
 	visibility: hidden;
