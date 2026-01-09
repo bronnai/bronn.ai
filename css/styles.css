@@ -562,6 +562,7 @@ footer .container {
 	z-index: 998;
 	opacity: 0;
 	visibility: hidden;
+	pointer-events: none;
 }
 
 .nav-animating .menu-overlay {
@@ -571,6 +572,7 @@ footer .container {
 .menu-overlay.active {
 	opacity: 1;
 	visibility: visible;
+	pointer-events: auto;
 }
 
 @media (max-width: 768px) {
