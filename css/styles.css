@@ -605,8 +605,6 @@ footer .container {
 		transform: translateX(100%);
 		align-items: flex-start;
 		overflow-y: auto;
-		overscroll-behavior-y: contain;
-		-webkit-overflow-scrolling: touch;
 	}
 
 	/* Only animate when this class is present */
