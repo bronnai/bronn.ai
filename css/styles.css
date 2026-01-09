@@ -561,6 +561,7 @@ footer .container {
 	z-index: 998;
 	opacity: 0;
 	visibility: hidden;
+	touch-action: none;
 }
 
 .nav-animating .menu-overlay {
