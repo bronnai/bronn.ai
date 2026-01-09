@@ -550,7 +550,6 @@ footer .container {
 	}
 }
 
-/* Dark Overlay - Global to prevent layout shift */
 .menu-overlay {
 	position: fixed;
 	top: 0;
@@ -588,7 +587,6 @@ footer .container {
 		display: inline-block !important;
 	}
 
-	/* Mobile Menu Slide-in */
 	nav ul {
 		display: flex;
 		flex-direction: column;
@@ -607,7 +605,6 @@ footer .container {
 		overflow-y: auto;
 	}
 
-	/* Only animate when this class is present */
 	.nav-animating nav ul {
 		transition: transform 0.3s ease;
 	}
@@ -617,25 +614,15 @@ footer .container {
 	}
 
 	nav ul li a {
-		padding: 12px 0;
+		padding: 10px 0;
 		display: block;
 		width: 100%;
 	}
 
-
-
-
-
 	.mobile-menu {
 		display: block;
-		/* Ensure hamburger is visible */
 		z-index: 1000;
-		/* Above overlay */
 		cursor: pointer;
-	}
-
-	.mobile-menu {
-		display: block;
 	}
 
 	.hero .container,
@@ -682,28 +669,22 @@ footer .container {
 	}
 
 	.footer-content {
-        display: grid;
-        grid-template-columns: auto auto;
-        gap: 60px;
-        align-items: start;
-        justify-content: center;
-    }
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 60px;
+		align-items: start;
+		justify-content: center;
+	}
 
-    .footer-section {
-        flex: none;
-        width: auto;
-        max-width: none;
-        text-align: left;
-    }
+	.footer-section {
+		flex: none;
+		width: auto;
+		max-width: none;
+		text-align: left;
+	}
 
 	.product-header h2 {
 		font-size: 1.8rem;
-	}
-
-
-
-	nav ul li a {
-		padding: 10px 0;
 	}
 
 	.video-promo {
