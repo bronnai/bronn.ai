@@ -258,7 +258,7 @@
 				</div>
 				<div>
 					<div class="video-container">
-						<video controls data-umami-event="body-video-click">
+						<video controls onplay="umami.track('body-video-play')">
 							<source src="assets/videos/bronn-demo.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
