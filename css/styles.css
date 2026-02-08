@@ -113,10 +113,9 @@ nav ul li a:hover {
 	margin-top: 80px;
 	padding: 100px 5% 80px;
 	background: #fff;
-	position: relative;
 }
 
-/* Promotional Banner */
+/* Promotional banner */
 .promo-banner {
 	position: fixed;
 	top: 100px;
@@ -144,11 +143,6 @@ nav ul li a:hover {
 .promo-banner-content a {
 	color: #16a34a;
 	font-weight: 600;
-	text-decoration: none;
-	white-space: nowrap;
-}
-
-.promo-banner-content a:hover {
 	text-decoration: none;
 }
 
@@ -748,6 +742,7 @@ footer .container {
 		text-align: left;
 	}
 
+/* Promotional banner */
 	.promo-banner {
 		left: 5%;
 		right: 5%;
