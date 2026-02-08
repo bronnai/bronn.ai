@@ -123,6 +123,7 @@ nav ul li a:hover {
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 999;
+	width: fit-content;
 	max-width: 90%;
 }
 
@@ -137,6 +138,7 @@ nav ul li a:hover {
 	border-radius: 8px;
 	font-size: 0.95rem;
 	backdrop-filter: blur(8px);
+	white-space: nowrap;
 }
 
 .promo-banner-content a {
@@ -759,6 +761,7 @@ footer .container {
 		width: 100%;
 		justify-content: space-between;
 		text-align: left;
+		white-space: normal;
 	}
 }
 
