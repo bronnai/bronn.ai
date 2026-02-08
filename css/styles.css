@@ -238,7 +238,7 @@ nav ul li a:hover {
 	padding: 80px 5%;
 }
 
-.product-section:nth-child(even) {
+#vat-validator {
 	background: #fff;
 }
 
@@ -764,4 +764,5 @@ footer .container {
 	.mobile-nav-controls {
 		display: none !important;
 	}
+
 }
