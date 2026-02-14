@@ -276,7 +276,6 @@ nav ul li a:hover {
 .features {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(3, auto);
 	gap: 1.5rem;
 }
 
@@ -694,7 +693,6 @@ footer .container {
 
 	.features {
 		grid-template-columns: 1fr;
-		grid-template-rows: repeat(6, auto);
 		gap: 1rem;
 	}
 
